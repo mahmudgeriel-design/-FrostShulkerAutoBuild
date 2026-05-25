@@ -1,0 +1,5 @@
+name: FrostShulkerAuto
+version: 1.0
+main: my.frost.shulker.Main
+api-version: 1.16
+description: Элитный коммерческий самопис на авто-сбор ресурсов в шалкер и открытие без установки.
