@@ -16,7 +16,7 @@
     </properties>
 
     <dependencies>
-        <!-- Наше переименованное локальное ядро -->
+        <!-- Наше локальное ядро -->
         <dependency>
             <groupId>com.destroystokyo.paper</groupId>
             <artifactId>paper-api</artifactId>
@@ -24,7 +24,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/src/main/resources/paper-api.jar</systemPath>
         </dependency>
-        <!-- Системный фикс чата, чтобы пропустить BaseComponent -->
+        <!-- Фикс чата для BaseComponent -->
         <dependency>
             <groupId>net.md-5</groupId>
             <artifactId>bungeecord-chat</artifactId>
@@ -45,13 +45,13 @@
                 </configuration>
             </plugin>
         </plugins>
+        <!-- ЖЕСТКИЙ ФИКС: Принудительно упаковываем plugin.yml внутрь jar-файла! -->
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
-                <excludes>
-                    <exclude>*.jar</exclude>
-                </excludes>
-                <filtering>false</filtering>
+                <includes>
+                    <include>plugin.yml</include>
+                </includes>
             </resource>
         </resources>
     </build>
