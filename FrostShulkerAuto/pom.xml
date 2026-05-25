@@ -16,7 +16,7 @@
     </properties>
 
     <dependencies>
-        <!-- Системная переменная baseDir, которую Maven пережуёт без ошибок -->
+        <!-- Каноничная рабочая привязка к имени paper-api.jar -->
         <dependency>
             <groupId>com.destroystokyo.paper</groupId>
             <artifactId>paper-api</artifactId>
