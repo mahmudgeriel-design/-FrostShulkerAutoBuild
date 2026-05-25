@@ -15,21 +15,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <repositories>
-        <!-- Официальный облачный склад ядер PaperMC -->
-        <repository>
-            <id>papermc</id>
-            <url>https://papermc.io</url>
-        </repository>
-    </repositories>
-
     <dependencies>
-        <!-- Подгружаем чистое ядро 1.16.5 напрямую из облака -->
+        <!-- Железобетонный системный путь от самого корня сессии -->
         <dependency>
             <groupId>com.destroystokyo.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>1.16.5-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
+            <scope>system</scope>
+            <systemPath>${session.executionRootDirectory}/src/main/resources/paper-api.jar</systemPath>
         </dependency>
     </dependencies>
 
@@ -45,5 +38,14 @@
                 </configuration>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>*.jar</exclude>
+                </excludes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
     </build>
 </project>
