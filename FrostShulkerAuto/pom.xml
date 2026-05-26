@@ -16,12 +16,20 @@
     </properties>
 
     <dependencies>
+        <!-- Наше локальное ядро, которое теперь видится идеально -->
         <dependency>
             <groupId>com.destroystokyo.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>1.16.5-R0.1-SNAPSHOT</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/src/main/resources/paper-api.jar</systemPath>
+        </dependency>
+        <!-- Системный фикс чата, чтобы успешно пропустить BaseComponent -->
+        <dependency>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-chat</artifactId>
+            <version>1.16-R0.4</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
