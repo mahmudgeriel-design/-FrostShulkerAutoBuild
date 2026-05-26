@@ -16,7 +16,6 @@
     </properties>
 
     <dependencies>
-        <!-- Наше локальное ядро -->
         <dependency>
             <groupId>com.destroystokyo.paper</groupId>
             <artifactId>paper-api</artifactId>
@@ -24,30 +23,9 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/src/main/resources/paper-api.jar</systemPath>
         </dependency>
-        <!-- Фикс чата для BaseComponent -->
-        <dependency>
-            <groupId>net.md-5</groupId>
-            <artifactId>bungeecord-chat</artifactId>
-            <version>1.16-R0.4</version>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
 
     <build>
-        <!-- ЖЕСТКО УКАЗЫВАЕМ ПУТЬ К ТВОЕМУ КОДУ, ЧТОБЫ MAVEN ЕГО НЕ ПОТЕРЯЛ -->
-        <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
-        
-        <resources>
-            <!-- Принудительно вшиваем plugin.yml в корень готовой банки jar -->
-            <resource>
-                <directory>${project.basedir}/src/main/resources</directory>
-                <includes>
-                    <include>plugin.yml</include>
-                </includes>
-                <filtering>false</filtering>
-            </resource>
-        </resources>
-
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
