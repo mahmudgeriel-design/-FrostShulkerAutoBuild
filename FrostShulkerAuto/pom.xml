@@ -16,7 +16,7 @@
     </properties>
 
     <dependencies>
-        <!-- Наше локальное ядро paper-api.jar -->
+        <!-- Наше локальное ядро -->
         <dependency>
             <groupId>com.destroystokyo.paper</groupId>
             <artifactId>paper-api</artifactId>
@@ -34,11 +34,13 @@
     </dependencies>
 
     <build>
-        <sourceDirectory>src/main/java</sourceDirectory>
+        <!-- ЖЕСТКО УКАЗЫВАЕМ ПУТЬ К ТВОЕМУ КОДУ, ЧТОБЫ MAVEN ЕГО НЕ ПОТЕРЯЛ -->
+        <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+        
         <resources>
             <!-- Принудительно вшиваем plugin.yml в корень готовой банки jar -->
             <resource>
-                <directory>src/main/resources</directory>
+                <directory>${project.basedir}/src/main/resources</directory>
                 <includes>
                     <include>plugin.yml</include>
                 </includes>
