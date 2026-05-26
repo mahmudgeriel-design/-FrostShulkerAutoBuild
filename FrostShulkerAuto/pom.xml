@@ -16,7 +16,7 @@
     </properties>
 
     <dependencies>
-        <!-- Наше локальное ядро -->
+        <!-- Наше локальное ядро paper-api.jar -->
         <dependency>
             <groupId>com.destroystokyo.paper</groupId>
             <artifactId>paper-api</artifactId>
@@ -34,6 +34,18 @@
     </dependencies>
 
     <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <resources>
+            <!-- Принудительно вшиваем plugin.yml в корень готовой банки jar -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>plugin.yml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -45,14 +57,5 @@
                 </configuration>
             </plugin>
         </plugins>
-        <!-- ЖЕСТКИЙ ФИКС: Принудительно упаковываем plugin.yml внутрь jar-файла! -->
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>plugin.yml</include>
-                </includes>
-            </resource>
-        </resources>
     </build>
 </project>
