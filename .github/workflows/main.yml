@@ -10,15 +10,10 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-    # Профессиональный авто-фикс: ищет любой jar (кроме системных) и переименовывает под проект
-    - name: Auto Fix Path
-      run: |
-        mkdir -p FrostShulkerAuto/src/main/resources/
-        find . -maxdepth 3 -name "*.jar" ! -path "*/target/*" -exec cp {} FrostShulkerAuto/src/main/resources/paper-api.jar \;
     - name: Build with Maven
       run: mvn -f FrostShulkerAuto/pom.xml clean package
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
         name: FrostShulkerAutoPlugin
-        path: "**/target/*.jar"
+        path: FrostShulkerAuto/target/*.jar
