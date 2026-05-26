@@ -16,7 +16,7 @@
     </properties>
 
     <dependencies>
-        <!-- Наше локальное ядро, которое теперь видится идеально -->
+        <!-- Локальное ядро -->
         <dependency>
             <groupId>com.destroystokyo.paper</groupId>
             <artifactId>paper-api</artifactId>
@@ -24,7 +24,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/src/main/resources/paper-api.jar</systemPath>
         </dependency>
-        <!-- Системный фикс чата, чтобы успешно пропустить BaseComponent -->
+        <!-- Фикс чата для BaseComponent -->
         <dependency>
             <groupId>net.md-5</groupId>
             <artifactId>bungeecord-chat</artifactId>
@@ -34,6 +34,20 @@
     </dependencies>
 
     <build>
+        <!-- Принудительно указываем пути к исходному коду Java -->
+        <sourceDirectory>src/main/java</sourceDirectory>
+        
+        <!-- Принудительно упаковываем plugin.yml из ресурсов в корень банки jar -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>plugin.yml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
